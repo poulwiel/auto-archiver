@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=$(find . -type f -iregex "./[0-9]+\.[a-z]+" | sort | head -1)
+FILE=$(find . -type f -mtime 30 -iregex "./[0-9]+\.[a-z]+" | sort | head -1)
 
 
 if [ -f bakap.7z ]
