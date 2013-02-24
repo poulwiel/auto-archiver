@@ -1,9 +1,9 @@
 #!/bin/bash
 
-COUNT=$(find . -type f -mtime 30 -iregex "./[0-9]+\.[a-z]+" | wc -l)
+COUNT=$(find . -type f -mtime +30 -iregex "./[0-9]+\.[a-z]+" | wc -l)
 echo "Matching files in this directory $COUNT"
 
-FILE=$(find . -type f -mtime 30 -iregex "./[0-9]+\.[a-z]+" | sort | head -1)
+FILE=$(find . -type f -mtime +30 -iregex "./[0-9]+\.[a-z]+" | sort | head -1)
 
 if [ $COUNT -gt 0 ]
 then
